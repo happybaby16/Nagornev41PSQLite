@@ -14,17 +14,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/etEmail"
+        app:layout_constraintBottom_toTopOf="@+id/etCountry"
         android:layout_width="match_parent"
         android:layout_height="20pt">
     </EditText>
 
     <EditText
-        android:id="@+id/etEmail"
-        android:hint="Email"
+        android:id="@+id/etCountry"
+        android:hint="Country"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etName"
+        app:layout_constraintBottom_toTopOf="@+id/etTaste"
+        android:layout_width="match_parent"
+        android:layout_height="20pt">
+    </EditText>
+
+    <EditText
+        android:id="@+id/etTaste"
+        android:hint="Taste"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCountry"
+        app:layout_constraintBottom_toTopOf="@+id/etPrice"
+        android:layout_width="match_parent"
+        android:layout_height="20pt">
+    </EditText>
+
+
+    <EditText
+        android:id="@+id/etPrice"
+        android:hint="Price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTaste"
         app:layout_constraintBottom_toTopOf="@+id/buttonTable"
         android:layout_width="match_parent"
         android:layout_height="20pt">
@@ -34,12 +57,11 @@
     <TableLayout
         android:id="@+id/buttonTable"
         android:layout_width="match_parent"
-        android:layout_height="0pt"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_weight="1">
+        app:layout_constraintTop_toBottomOf="@+id/etPrice"
+        app:layout_constraintBottom_toBottomOf="@id/dbtable">
 
         <TableRow android:layout_weight="1">
             <Button
@@ -49,13 +71,7 @@
                 android:layout_weight="1"
                 android:text="Add">
             </Button>
-            <Button
-                android:id="@+id/btnRead"
-                android:layout_width="0pt"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Read">
-            </Button>
+
             <Button
                 android:id="@+id/btnClear"
                 android:layout_width="0pt"
@@ -64,17 +80,17 @@
                 android:text="Clear">
             </Button>
         </TableRow>
-        <TableRow android:layout_weight="10">
-            <TextView
-                android:id="@+id/textRes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/black"
-                android:gravity="left"
+    </TableLayout>
+    <TableLayout
+        android:id="@+id/dbtable"
+        android:layout_width="0pt"
+        android:layout_height="0pt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonTable"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
 
-                />
-        </TableRow>
     </TableLayout>
 
 
